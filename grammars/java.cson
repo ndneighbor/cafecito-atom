@@ -2,6 +2,7 @@
 'name': 'Java'
 'fileTypes': [
   'java'
+  'cafe'
   'bsh'
 ]
 'patterns': [
@@ -31,13 +32,13 @@
       {
         # http://docs.oracle.com/javase/tutorial/java/nutsandbolts/_keywords.html
         'match': '''(?x)\\b(?<!\\$)
-                    (abstract|assert|boolean|break|byte|case|catch|char|class|
-                    const|continue|default|do|double|else|enum|extends|final|
-                    finally|float|for|goto|if|implements|import|instanceof|int|
-                    interface|long|native|new|package|private|protected|public|
-                    return|short|static|strictfp|super|switch|syncronized|this|
-                    throw|throws|transient|try|void|volatile|while|
-                    true|false|null)\\b
+                    (abstracto|afirmar|booleano|interrumpir|byte|caso|captura|cara|clase|
+                    const|continua|predet|haz|doble|entonces|enum|extiende|final|
+                    finalmente|flota|para|ira|si|implementa|importar|instantede|entero|
+                    interfaz|largo|nativo|nuevo|paquete|privado|protegido|publico|
+                    devolver|corto|estatico|strictfp|super|cambia|sincronizado|esto|
+                    lanzar|lanza|transitorio|tratar|vacio|volatil|mientras|
+                    verdad|falso|nulo)\\b
                   '''
         'name': 'invalid.illegal.character_not_allowed_here.java'
       }
@@ -79,13 +80,13 @@
       {
         # http://docs.oracle.com/javase/tutorial/java/nutsandbolts/_keywords.html
         'match': '''(?x)\\b(?<!\\$)
-                    (abstract|assert|boolean|break|byte|case|catch|char|class|
-                    const|continue|default|do|double|else|enum|extends|final|
-                    finally|float|for|goto|if|implements|import|instanceof|int|
-                    interface|long|native|new|package|private|protected|public|
-                    return|short|static|strictfp|super|switch|syncronized|this|
-                    throw|throws|transient|try|void|volatile|while|
-                    true|false|null)\\b
+                    (abstracto|afirmar|booleano|interrumpir|byte|caso|captura|cara|clase|
+                    const|continua|predet|haz|doble|entonces|enum|extiende|final|
+                    finalmente|flota|para|ira|si|implementa|importar|instantede|entero|
+                    interfaz|largo|nativo|nuevo|paquete|privado|protegido|publico|
+                    devolver|corto|estatico|strictfp|super|cambia|sincronizado|esto|
+                    lanzar|lanza|transitorio|tratar|vacio|volatil|mientras|
+                    verdad|falso|nulo)\\b
                   '''
         'name': 'invalid.illegal.character_not_allowed_here.java'
       }
@@ -166,7 +167,7 @@
         'include': '#all-types'
       }
       {
-        'begin': '(?<!\\])\\s*({)' # Don't match new int[]{1, 2, 3};
+        'begin': '(?<!\\])\\s*({)' # Don't match new ent[]{1, 2, 3};
         'beginCaptures':
           '1':
             'name': 'punctuation.section.inner-class.begin.bracket.curly.java'
@@ -206,7 +207,7 @@
       }
     ]
   'class':
-    'begin': '(?=\\w?[\\w\\s]*(?:class|(?:@)?interface|enum)\\s+\\w+)'
+    'begin': '(?=\\w?[\\w\\s]*(?:clase|(?:@)?interfaz|enum)\\s+\\w+)'
     'end': '}'
     'endCaptures':
       '0':
@@ -741,7 +742,7 @@
         'name': 'keyword.control.ternary.java'
       }
       {
-        'match': '\\b(return|break|case|continue|default|do|while|for|switch|if|else)\\b'
+        'match': '\\b(devolver|inter|caso|continua|predet|haz|mientras|para|cambia|si|entonces)\\b'
         'name': 'keyword.control.java'
       }
       {
@@ -812,7 +813,7 @@
       }
     ]
   'methods':
-    'begin': '(?!new)(?=[\\w<].*\\s+)(?=([^=/]|/(?!/))+\\()'
+    'begin': '(?!nuevo)(?=[\\w<].*\\s+)(?=([^=/]|/(?!/))+\\()'
     'end': '(})|(?=;)'
     'endCaptures':
       '1':
@@ -1080,7 +1081,7 @@
   'primitive-arrays':
     'patterns': [
       {
-        'begin': '\\b(void|boolean|byte|char|short|int|float|long|double)\\b\\s*(?=\\[)'
+        'begin': '\\b(vacio|booleano|byte|cara|corto|ent||largo|doble)\\b\\s*(?=\\[)'
         'beginCaptures':
           '1':
             'name': 'storage.type.primitive.array.java'
@@ -1096,7 +1097,7 @@
       }
     ]
   'primitive-types':
-    'match': '\\b(void|boolean|byte|char|short|int|float|long|double)\\b'
+    'match': '\\b(vacio|booleano|byte|cara|corto|ent|flota|largo|doble)\\b'
     'name': 'storage.type.primitive.java'
   'properties':
     'patterns': [
@@ -1129,7 +1130,7 @@
       }
     ]
   'storage-modifiers':
-    'match': '\\b(public|private|protected|static|final|native|synchronized|abstract|threadsafe|transient|volatile|default|strictfp)\\b'
+    'match': '\\b(publico|privado|protegido|estatico|final|native|sincronizado|abstracto|threadsafe|transitorio|volatil|predet|estrictopf)\\b'
     'name': 'storage.modifier.java'
   'strings':
     'patterns': [
@@ -1184,7 +1185,7 @@
     'begin': '''(?x)
       (?=
         (
-          (void|boolean|byte|char|short|int|float|long|double)
+          (vacio|booleano|byte|cara|corto|ent|floata|largo|doble)
           |
           (?>(\\w+\\.)*[A-Z]+\\w*) # e.g. `javax.ws.rs.Response`, or `String`
         )
@@ -1192,7 +1193,7 @@
           <[\\w<>,?\\s]*> # HashMap<Integer, String>
         )?
         (
-          (\\[\\])* # int[][]
+          (\\[\\])* # ent[][]
         )?
         \\s+
         [A-Za-z_$][\\w$]* # At least one identifier after space
@@ -1229,7 +1230,7 @@
       }
     ]
   'member-variables':
-    'begin': '(?=private|protected|public|native|synchronized|abstract|threadsafe|transient|static|final)'
+    'begin': '(?=privado|protegido|publico|native|sincronizado|abstracto|threadsafe|transitorio|estatico|final)'
     'end': '(?=;)'
     'patterns': [
       {

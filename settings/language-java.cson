@@ -20,15 +20,15 @@
 '.keyword.other.documentation.javadoc.java':
   'editor':
     'completions': [
-      'author'
-      'deprecated'
-      'exception'
-      'link'
+      'autor'
+      'depreciado'
+      'excepcion'
+      'enlace'
       'param'
-      'return'
-      'see'
+      'devolver'
+      'ver'
       'serial'
-      'since'
-      'throws'
+      'desde'
+      'lanza'
       'version'
     ]
