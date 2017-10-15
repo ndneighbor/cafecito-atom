@@ -38,7 +38,29 @@
                     interfaz|largo|nativo|nuevo|paquete|privado|protegido|publico|
                     devolver|corto|estatico|strictfp|super|cambia|sincronizado|esto|
                     lanzar|lanza|transitorio|tratar|vacio|volatil|mientras|
-                    verdad|falso|nulo)\\b
+                    verdad|falso|nulo|
+                    абстракт|заяв|логический|прорыв|байт|вариант|улов|знак|класс|
+                    постоянная|продолж|умолч|делай|двойной|иначе|перечис|продлевает|резерв|
+                    вконце|плавающей|для|переход|если|реализует|включать|экземпляр|целый|
+                    интерфейс|длинные|нативный|новый|пакет|частный|защищенный|публичный|
+                    вернуть|короткий|статический|точныйПЗ|супер|ключ|синхронный|это|
+                    брось|бросит|транзитный|проб|пустой|волатилная|пока|
+                    true|false|null|
+                    抽象|断言|布尔|打破|字节|案例|赶上|焦炭|类|
+                    常量|继续|默认|做|双|否则|枚举|扩展|最终|
+                    最后|浮|对于|转到|如果|实现|进口|的例子|整数|
+                    接口|长|本地|新|包|私人|保护|公共|
+                    返回|短|静态|严格浮点|超级|开关|同步|此|
+                    扔|抛出|瞬时|尝试|无效|挥发性|同时|
+                    true|false|空|
+                    abstract|assert|boolean|break|byte|case|catch|char|class|
+                    const|continue|default|do|double|else|enum|extends|final|
+                    finally|float|for|goto|if|implements|import|instanceof|int|
+                    interface|long|native|new|package|private|protected|public|
+                    return|short|static|strictfp|super|switch|syncronized|this|
+                    throw|throws|transient|try|void|volatile|while|
+                    true|false|null
+                    )\\b
                   '''
         'name': 'invalid.illegal.character_not_allowed_here.java'
       }
@@ -86,7 +108,29 @@
                     interfaz|largo|nativo|nuevo|paquete|privado|protegido|publico|
                     devolver|corto|estatico|strictfp|super|cambia|sincronizado|esto|
                     lanzar|lanza|transitorio|tratar|vacio|volatil|mientras|
-                    verdad|falso|nulo)\\b
+                    verdad|falso|nulo|
+                    abstract|assert|boolean|break|byte|вариант|catch|char|class|
+                    const|continue|default|do|double|else|enum|extends|final|
+                    finally|float|for|goto|if|implements|import|instanceof|int|
+                    interface|long|native|new|package|private|protected|public|
+                    return|short|static|strictfp|super|switch|syncronized|this|
+                    throw|throws|transient|try|void|volatile|while|
+                    true|false|null|
+                    абстракт|заяв|логический|прорыв|байт|вариант|улов|знак|класс|
+                    постоянная|продолж|умолч|делай|двойной|иначе|перечис|продлевает|резерв|
+                    вконце|плавающей|для|переход|если|реализует|включать|экземпляр|целый|
+                    интерфейс|длинные|нативный|новый|пакет|частный|защищенный|публичный|
+                    вернуть|короткий|статический|точныйПЗ|супер|ключ|синхронный|это|
+                    брось|бросит|транзитный|проб|пустой|волатилная|пока|
+                    true|false|null|
+                    抽象|断言|布尔|打破|字节|案例|赶上|焦炭|类|
+                    常量|继续|默认|做|双|否则|枚举|扩展|最终|
+                    最后|浮|对于|转到|如果|实现|进口|的例子|整数|
+                    接口|长|本地|新|包|私人|保护|公共|
+                    返回|短|静态|严格浮点|超级|开关|同步|此|
+                    扔|抛出|瞬时|尝试|无效|挥发性|同时|
+                    true|false|空
+                    )\\b
                   '''
         'name': 'invalid.illegal.character_not_allowed_here.java'
       }
@@ -207,7 +251,7 @@
       }
     ]
   'class':
-    'begin': '(?=\\w?[\\w\\s]*(?:clase|(?:@)?interfaz|enum)\\s+\\w+)'
+    'begin': '(?=\\w?[\\w\\s]*(?:clase|(?:@)?interfaz|enum|接口|枚举|интерфейс|перечис)\\s+\\w+)'
     'end': '}'
     'endCaptures':
       '0':
@@ -742,7 +786,11 @@
         'name': 'keyword.control.ternary.java'
       }
       {
-        'match': '\\b(devolver|inter|caso|continua|predet|haz|mientras|para|cambia|si|entonces)\\b'
+        'match': '\\b(devolver|inter|caso|continua|predet|haz|mientras|para|cambia|si|entonces|
+        вернуть|прорыв|вариант|продолж|умолч|делай|пока|для|ключ|если|иначе|
+        返回|打破|案例|继续|双|做|同时|对于|开关|如果|否则|
+        return|break|case|continue|default|do|while|for|switch|if|else
+        )\\b'
         'name': 'keyword.control.java'
       }
       {
@@ -1081,7 +1129,11 @@
   'primitive-arrays':
     'patterns': [
       {
-        'begin': '\\b(vacio|booleano|byte|cara|corto|ent||largo|doble)\\b\\s*(?=\\[)'
+        'begin': '\\b(vacio|booleano|byte|cara|corto|ent|floata|largo|doble|
+        пустой|логический|байт|знак|короткий|целый|плавающей|длинные|двойной|
+        无效|布尔|字节|焦炭|短|整数|浮|长|双|
+        void|boolean|byte|char|short|int|float|long|double
+        )\\b\\s*(?=\\[)'
         'beginCaptures':
           '1':
             'name': 'storage.type.primitive.array.java'
@@ -1097,7 +1149,10 @@
       }
     ]
   'primitive-types':
-    'match': '\\b(vacio|booleano|byte|cara|corto|ent|flota|largo|doble)\\b'
+    'match': '\\b(vacio|booleano|byte|cara|corto|ent|flota|largo|doble|
+    пустой|логический|байт|знак|короткий|целый|плавающей|длинные|двойной|
+    无效|布尔|字节|焦炭|短|整数|浮|长|双|
+    void|boolean|byte|char|short|int|float|long|double)\\b'
     'name': 'storage.type.primitive.java'
   'properties':
     'patterns': [
@@ -1130,7 +1185,10 @@
       }
     ]
   'storage-modifiers':
-    'match': '\\b(publico|privado|protegido|estatico|final|native|sincronizado|abstracto|threadsafe|transitorio|volatil|predet|estrictopf)\\b'
+    'match': '\\b(publico|privado|protegido|estatico|final|native|sincronizado|abstracto|threadsafe|transitorio|volatil|predet|estrictopf|
+    публичный|частный|защищенный|статический|резерв|нативный|синхронный|абстракт|threadsafe|транзитный|волатилная|умолч|точныйПЗ|
+    公共|私人|保护|静态|最终|本地|同步|抽象|threadsafe|瞬时|挥发性|默认|严格浮点|
+    public|private|protected|static|final|native|synchronized|abstract|threadsafe|transient|volatile|default|strictfp)\\b'
     'name': 'storage.modifier.java'
   'strings':
     'patterns': [
@@ -1185,7 +1243,10 @@
     'begin': '''(?x)
       (?=
         (
-          (vacio|booleano|byte|cara|corto|ent|floata|largo|doble)
+          (vacio|booleano|byte|cara|corto|ent|floata|largo|doble|
+          пустой|логический|байт|знак|короткий|целый|плавающей|длинные|двойной|
+          无效|布尔|字节|焦炭|短|整数|浮|长|双|
+          void|boolean|byte|char|short|int|float|long|double)
           |
           (?>(\\w+\\.)*[A-Z]+\\w*) # e.g. `javax.ws.rs.Response`, or `String`
         )
@@ -1230,7 +1291,10 @@
       }
     ]
   'member-variables':
-    'begin': '(?=privado|protegido|publico|native|sincronizado|abstracto|threadsafe|transitorio|estatico|final)'
+    'begin': '(?=privado|protegido|publico|native|sincronizado|abstracto|threadsafe|transitorio|estatico|final|
+    частный|защищенный|публичный|нативный|синхронный|абстракт|threadsafe|транзитный|статический|резерв|
+    私人|保护|公共|本地|同步|抽象|threadsafe|瞬时|静态|最终|
+    private|protected|public|native|synchronized|abstract|threadsafe|transient|static|final)'
     'end': '(?=;)'
     'patterns': [
       {
